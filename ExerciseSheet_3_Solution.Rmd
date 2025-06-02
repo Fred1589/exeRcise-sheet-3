@@ -1,0 +1,24 @@
+---
+title: 'Exercise #3'
+author: "Frederik Borutta (10345490) / Felix Borutta (10049639)"
+date: "`r Sys.Date()`"
+output: distill::distill_article
+bibliography: packages.bib
+nocite: '@*'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Exercise 1: Initializing git (4 Points)
+
+
+
+## Exercise 2: Putting your Repository on GitHub (3 Points)
+
+
+## Exercise 3: Pixar Films (4 Points)
+
+
+## Exercise 4: Open Analysis (4 points)
