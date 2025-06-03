@@ -53,3 +53,9 @@ don’t need to create a .gitignore file. Just do not commit these files manuall
 
 
 ## Exercise 4: Open Analysis (4 points)
+
+c) 
+* Dataset Name: Meat consumption in the USA (USDA, 2018)
+* Link: https://github.com/owid/owid-datasets/tree/master/datasets/Meat%20consumption%20in%20the%20USA%20(USDA%2C%202018)
+
+
