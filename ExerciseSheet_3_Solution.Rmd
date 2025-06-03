@@ -74,3 +74,20 @@ cumsums
 ```
 It can be observed that the overall consumption for red meat changes positively in the sense that the consumption seemed to drop, whereas the total meat consumption increased.
 
+f)
+
+```{r lineplot, fig.cap="Annual changes in per capita meat consumption"}
+ggplot(x, aes(x=year)) + 
+  geom_line(aes(y = red_meat_diff, colour = "red meat")) + 
+  geom_line(aes(y = total_diff, colour = "total")) +
+  labs(
+    title = "Annual changes in per meat capita consumption",
+    subtitle = "From 1965 to 2018",
+  ) +
+  xlab("Year") +
+  ylab("Changes in kg") +
+  theme_light() +
+  theme(plot.title=element_text(hjust = 0.5), plot.subtitle=element_text(hjust=0.5))
+```
+
+Figure @ref(fig:lineplot) shows the annual changes (unaggregated) in per capita meat consumption for red meat and for meat in general.
