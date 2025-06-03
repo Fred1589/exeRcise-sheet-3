@@ -171,3 +171,9 @@ ggplot(joined_df, aes(x = series, y = rotten_tomatoes, fill = film)) +
 ```
 
 ## Exercise 4: Open Analysis (4 points)
+
+c) 
+* Dataset Name: Meat consumption in the USA (USDA, 2018)
+* Link: https://github.com/owid/owid-datasets/tree/master/datasets/Meat%20consumption%20in%20the%20USA%20(USDA%2C%202018)
+
+
