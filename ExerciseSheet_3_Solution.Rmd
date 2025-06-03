@@ -178,7 +178,7 @@ c)
 * Dataset Name: Meat consumption in the USA (USDA, 2018)
 * Link: https://github.com/owid/owid-datasets/tree/master/datasets/Meat%20consumption%20in%20the%20USA%20(USDA%2C%202018)
 
-d) How is the red meat consumption chnaging in comparison to the total meat consumption? We believe it is interesting to see if the awareness of the relationship between climate change and red meat production is visible in the consumption pattern of US citizens.
+d) How is the red meat consumption changing in comparison to the total meat consumption? We believe it is interesting to see if the awareness of the relationship between climate change and red meat production is visible in the consumption pattern of US citizens.
 
 e)
 
