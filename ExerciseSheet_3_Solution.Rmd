@@ -11,6 +11,8 @@ nocite: '@*'
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE)
 install.packages("distill")
+install.packages("tidyverse", repos="http://cran.us.r-project.org")
+library(tidyverse)
 
 knitr::write_bib(c(.packages()), "packages.bib")
 ```
@@ -58,6 +60,17 @@ c)
 * Dataset Name: Meat consumption in the USA (USDA, 2018)
 * Link: https://github.com/owid/owid-datasets/tree/master/datasets/Meat%20consumption%20in%20the%20USA%20(USDA%2C%202018)
 
-d) Is the red meat consumption decreasing rate faster than the one of total meat consumption? We believe it is interesting to see if the awareness of the relationship between climate change and red meat production is visible in the consumption pattern of US citizens.
+d) How is the red meat consumption chnaging in comparison to the total meat consumption? We believe it is interesting to see if the awareness of the relationship between climate change and red meat production is visible in the consumption pattern of US citizens.
 
+e)
+```{r rates}
+d <- read_csv("task4_data.csv", show_col_types=FALSE)
+diffs <- as.data.frame(lapply(d[,c("Per capita red meat consumption","Per capita total meat consumption")], diff, lag=1))
+x <- cbind(d[0:-1,c("Year")], diffs)
+colnames(x) <- c("year", "red_meat_diff", "total_diff")
+
+cumsums <- cbind(x["year"], cumsum(x["red_meat_diff"]), cumsum(x["total_diff"]))
+cumsums
+```
+It can be observed that the overall consumption for red meat changes positively in the sense that the consumption seemed to drop, whereas the total meat consumption increased.
 
