@@ -1,5 +1,6 @@
 ---
 title: 'Exercise #3'
+subtitle: "Fortgeschrittene Statistische Software für NF"
 author: "Frederik Borutta (10345490) / Felix Borutta (10049639)"
 date: "`r Sys.Date()`"
 output: distill::distill_article
@@ -11,8 +12,14 @@ nocite: '@*'
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE)
 install.packages("distill")
+install.packages("ggplot2")
+library(readr)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 
 knitr::write_bib(c(.packages()), "packages.bib")
+setwd("C:/Studium/Fortgeschrittene_Statistische_Software/Exercise_03")
 ```
 
 ## Exercise 1: Initializing git (4 Points)
@@ -48,8 +55,46 @@ don’t need to create a .gitignore file. Just do not commit these files manuall
 
 ## Exercise 2: Putting your Repository on GitHub (3 Points)
 
+a) Create a new repository on GitHub in your account named exeRcise-sheet-3. Make sure you create
+a public repository so we are able to see it for grading. Add the link to the repository below:
+
+https://github.com/Fred1589/exeRcise-sheet-3#
+
+
+b) Push your code to this new repository by copying and executing the snippet on github listed under
+...or push an existing repository from the command line.
+
+
+c) Regularly push your latest changes to GitHub again and especially do so when you are finished with
+this sheet.
 
 ## Exercise 3: Pixar Films (4 Points)
+
+a) Load the pixar_films dataset into R. Clean the dataset by removing films without a title. Inspect the
+variable film_rating. What are the possible values and what do they mean? Create a factor variable
+for the film rating. Why is this appropriate?
+
+
+b) Inspect the film titles manually. Which films form a film series? A film series can be identified by a
+common word in the titles of the films, often in conjunction with a number in the title, e.g. “Despicable
+Me” and “Despicable Me 2”. Create a dataframe which displays a list of the different series with the
+titles of the films and how many films belong to the series. Output the dataframe.
+
+
+c) Load the public_response dataframe into R. Convert the cinema_score variable into a factor while
+ensuring the factor levels are defined in ascending order, from the lowest to the highest score. Combine
+public_response with the pixar_films dataset using an appropriate merge variable.
+
+
+d) Choose one of the variables representing the public response and create a bar plot for the films belonging
+to a series. Here are the details of the plot:  
+• The film series are represented on the x-axis.  
+• Your chosen public response variable is displayed on the y-axis.  
+• Each film in the series is represented as a separate bar. Bars are grouped by film under their
+respective series on the x-axis. Order the bars within a series according to the release date of the
+films.  
+• A title and axis labels for context.  
+What do you notice when comparing the scores of the films in a series? Do you see any patterns?
 
 
 ## Exercise 4: Open Analysis (4 points)
