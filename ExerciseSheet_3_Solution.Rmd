@@ -102,6 +102,21 @@ common word in the titles of the films, often in conjunction with a number in th
 Me” and “Despicable Me 2”. Create a dataframe which displays a list of the different series with the
 titles of the films and how many films belong to the series. Output the dataframe.
 
+```{r pixar-film-series}
+pixar_film_series <- data.frame(
+  series = c("Cars", "Finding Nemo", "Incredibles", "Monsters, Inc", "Toy Story"),
+  films = I(list(
+    c("Cars", "Cars 2", "Cars 3"),
+    c("Finding Nemo", "Finding Dory"),
+    c("The Incredibles", "Incredibles 2"),
+    c("Monsters, Inc.", "Monsters University"),
+    c("Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4")
+  )),
+  amount = c(3, 2, 2, 2, 4)
+)
+
+head(pixar_film_series, n = 5)
+```
 
 c) Load the public_response dataframe into R. Convert the cinema_score variable into a factor while
 ensuring the factor levels are defined in ascending order, from the lowest to the highest score. Combine
