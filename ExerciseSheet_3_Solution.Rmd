@@ -21,7 +21,6 @@ library(ggplot2)
 library(tidyverse)
 
 knitr::write_bib(c(.packages()), "packages.bib")
-setwd("C:/Studium/Fortgeschrittene_Statistische_Software/Exercise_03")
 ```
 
 ## Exercise 1: Initializing git (4 Points)
@@ -189,7 +188,7 @@ x <- cbind(d[0:-1,c("Year")], diffs)
 colnames(x) <- c("year", "red_meat_diff", "total_diff")
 
 cumsums <- cbind(x["year"], cumsum(x["red_meat_diff"]), cumsum(x["total_diff"]))
-cumsums
+tail(cumsums, 10)
 ```
 
 It can be observed that the overall consumption for red meat changes positively in the sense that the consumption seemed to drop, whereas the total meat consumption increased.
