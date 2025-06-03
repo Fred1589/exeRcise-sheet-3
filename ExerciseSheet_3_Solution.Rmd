@@ -74,6 +74,28 @@ a) Load the pixar_films dataset into R. Clean the dataset by removing films with
 variable film_rating. What are the possible values and what do they mean? Create a factor variable
 for the film rating. Why is this appropriate?
 
+```{r pixar-films-load-and-view-data}
+pixar_films = read_csv("pixar_films.csv")
+head(pixar_films, n = 5)
+
+pixar_films_cleaned <- pixar_films %>% 
+  filter(!is.na(film))
+
+print(unique(pixar_films_cleaned$film_rating))
+
+pixar_films_cleaned$film_rating <- as.factor(pixar_films_cleaned$film_rating)
+```
+
+Rating based on Motion Picture Association (MPA) film rating system.
+G - General Audience
+PG - Parental Guidance Suggested
+PG-13 - Parents Strongly Cautioned
+R - Restricted
+NC-17 - No One 17 And Under Admitted
+N/A - Not Available
+
+The column film_rating is appropriated for factor, because it will categorize the films. With a factorization, an efficient storage, with view on the rating, is possible.
+
 
 b) Inspect the film titles manually. Which films form a film series? A film series can be identified by a
 common word in the titles of the films, often in conjunction with a number in the title, e.g. “Despicable
