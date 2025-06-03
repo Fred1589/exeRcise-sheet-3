@@ -146,4 +146,28 @@ films.
 What do you notice when comparing the scores of the films in a series? Do you see any patterns?
 
 
+```{r plot-rotten-tomatoes}
+series_lookup <- pixar_film_series %>%
+  unnest(films) %>%
+  rename(film = films) %>% 
+  arrange(film)
+
+joined_df <- pixar_films %>%
+  inner_join(public_response, by = "film") %>%
+  inner_join(series_lookup, by = "film") %>%
+  arrange(series, release_date)
+
+joined_df$film <- factor(joined_df$film, levels = joined_df$film[order(joined_df$series, joined_df$release_date)])
+
+ggplot(joined_df, aes(x = series, y = rotten_tomatoes, fill = film)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  labs(
+    title = "Rotten Tomatoes Scores of Pixar Film Series",
+    x = "Film Series",
+    y = "Rotten Tomatoes Score"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
 ## Exercise 4: Open Analysis (4 points)
